@@ -20,6 +20,10 @@ public class Automasina {
 		atrums += 10;
 	}
 	
+    public int getAtrums() {
+        return atrums;
+    }
+	
 	public String toString() {
 		return motors + "\n" +
 				atrumkarba + "\n" +

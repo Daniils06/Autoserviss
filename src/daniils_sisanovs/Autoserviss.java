@@ -29,12 +29,25 @@ public class Autoserviss {
 				break;
 				
 			case 3:
-				saraksts.get(0).spiestGazi();
-				break;
+			    if (saraksts.size() == 0) {
+			        JOptionPane.showMessageDialog(null, 
+			        "Nav nevienas automašīnas!");
+			    } else {
+			        saraksts.get(0).spiestGazi();
+			        JOptionPane.showMessageDialog(null,
+			        "Jaunais ātrums: " + 
+			        saraksts.get(0).getAtrums() + " km/h");
+			    }
+			    break;
 				
 			case 4:
-				DarbsArFailu.saglabat(saraksts.get(0));
-				break;
+			    if (saraksts.size() == 0) {
+			        JOptionPane.showMessageDialog(null, 
+			        "Nav nevienas automašīnas saglabāšanai!");
+			    } else {
+			        DarbsArFailu.saglabat(saraksts.get(0));
+			    }
+			    break;
 			
 			case 5:
 				DarbsArFailu.nolasit();
@@ -53,6 +66,11 @@ public class Autoserviss {
 	}
 	
 	static void paradit() {
-		JOptionPane.showMessageDialog(null, saraksts.get(0).toString());
+		if (saraksts.size() == 0) {
+	        JOptionPane.showMessageDialog(null, 
+	        "Nav nevienas automašīnas sarakstā!");
+	    } else {
+	        JOptionPane.showMessageDialog(null, saraksts.get(0).toString());
+	    }
 	}
 }
